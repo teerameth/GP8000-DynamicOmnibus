@@ -137,7 +137,7 @@ class PathFinder:
         vis_image = map_image.copy()
 
         # Define colors (BGR format)
-        INDOOR_COLOR = (0, 255, 0)  # Green
+        INDOOR_COLOR = (0, 200, 0)  # Green
         OUTDOOR_COLOR = (203, 192, 255)  # Pink
         ROAD_COLOR = (0, 0, 0)  # Black
         POINT_COLOR = (0, 0, 255)  # Red
@@ -157,7 +157,7 @@ class PathFinder:
             # Draw the main connection line
             if conn.stairs != 0:
                 # Create dashed line for stairs
-                dash_length = 10
+                dash_length = 5
                 direction = np.array(end_pos) - np.array(start_pos)
                 length = np.linalg.norm(direction)
                 direction = direction / length

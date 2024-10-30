@@ -44,18 +44,18 @@ positions = np.array([
         [1756, 532],  # 31
         [1788, 512],  # 32
         [1868, 728],  # 33
-        [1284, 779],  # 34
-        [1259, 796],  # 35
-        [1212, 578],  # 36
-        [1164, 383],  # 37
-        [508, 554],   # 38
+        # [1284, 779],  # 34
+        # [1259, 796],  # 35
+        # [1212, 578],  # 36
+        # [1164, 383],  # 37
+        # [508, 554],   # 38
     ])
 
 # Connection(nodeA, nodeB, is_indoor, stair_count, cross_road)
 connections = [
     Connection(0, 1, True, 0, 0),
     Connection(1, 2, True, 0, 0),
-    Connection(2, 3, True, 0, 0),
+    Connection(2, 3, True, -20, 0),
     Connection(3, 4, False, 0, 0),
     Connection(4, 5, False, 0, 1),
     Connection(5, 6, False, 0, 0),
@@ -87,11 +87,11 @@ connections = [
     Connection(31, 32, True, 0, 0),
     Connection(32, 33, True, 0, 0),
     Connection(33, 1, True, 0, 0),
-    Connection(4, 34, False, 0, 1),
-    Connection(34, 35, False, 0, 0),
-    Connection(35, 36, False, 0, 0),
-    Connection(36, 37, True, 0, 0),
-    Connection(37, 38, True, 0, 0),
-    Connection(38, 22, True, 0, 0),
+    # Connection(4, 34, False, 0, 1),
+    # Connection(34, 35, False, 0, 0),
+    # Connection(35, 36, False, 0, 0),
+    # Connection(36, 37, True, 0, 0),
+    # Connection(37, 38, True, 0, 0),
+    # Connection(38, 22, True, 0, 0),
 
 ]
