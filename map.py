@@ -55,7 +55,7 @@ positions = np.array([
 connections = [
     Connection(0, 1, True, 0, 0),
     Connection(1, 2, True, 0, 0),
-    Connection(2, 3, True, -20, 0),
+    Connection(2, 3, True, -20, 0),     # Stair from Lee Wee Nam Lib to bus stop
     Connection(3, 4, False, 0, 0),
     Connection(4, 5, False, 0, 1),
     Connection(5, 6, False, 0, 0),

@@ -26,6 +26,10 @@ class PathFinder:
         self.connections = connections
         self.num_vertices = len(positions)
         self.graph = self._build_graph()
+        self.road_crossing_weight = 4.0
+        self.rain_weight = 3.0
+        self.sunny_weight = 2.0
+        self.stair_weight = 0.5 # per step
 
     def _calculate_distance(self, point1: np.ndarray, point2: np.ndarray) -> float:
         """Calculate Euclidean distance between two points"""
@@ -56,15 +60,15 @@ class PathFinder:
 
         # Weather effects for outdoor paths
         if not connection.is_indoor:
-            weather_factor = rain_prob * 2.0 + uv_index * 1.5
+            weather_factor = (rain_prob * self.rain_weight) + (uv_index * self.sunny_weight)
             base_cost *= (1.0 + weather_factor)
 
         # Stairs penalty (only for going up)
         if connection.stairs > 0:
-            base_cost += connection.stairs * 0.5
+            base_cost += connection.stairs * self.stair_weight
 
         # Road crossing penalty
-        base_cost += connection.road_crossings * 2.0
+        base_cost += connection.road_crossings * self.road_crossing_weight
 
         return base_cost
 

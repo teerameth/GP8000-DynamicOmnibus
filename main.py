@@ -100,6 +100,9 @@ class WeatherControlPanel:
         #########
         ## Map ##
         #########
+        finder.rain_weight = 3.0 if self.avoid_rain else 0.0
+        finder.sunny_weight = 2.0 if self.avoid_sun else 0.0
+        finder.road_crossing_weight = 4.0 if self.avoid_road else 0.0
         # Find optimal path
         self.path, self.cost = finder.find_shortest_path(0, 22, self.rain_chance, self.uv_index/3.0)
 
